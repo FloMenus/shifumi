@@ -98,6 +98,7 @@ h1 {
     color: #ffffff;
     display: inline-block;
     text-align: center;
+    margin-top: 20px;
 }
 
 .game-over-section {
@@ -110,7 +111,10 @@ h1 {
     font-family: 'League Spartan', sans-serif;
     font-size: 40px;
 }
-
+.game-over {
+    display: flex;
+    justify-content: center;
+}
 .hidden {
     display: none;
 }
