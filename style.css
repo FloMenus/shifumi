@@ -83,12 +83,34 @@ h1 {
 }
 
 
-.hidden {
-    display: none;
-}
+
 
 #text-result {
     color : #ffffff;
     font-family: 'League Spartan', sans-serif;
     font-size: 40px;
+}
+
+#button-game-over {
+    background: #344b07;
+    border-radius: 1000px;
+    padding: 20px 51px;
+    color: #ffffff;
+    display: inline-block;
+    text-align: center;
+}
+
+.game-over-section {
+    display: flex;
+    justify-content: center;
+}
+
+#game-over-sentence {
+    color : #ffffff;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 40px;
+}
+
+.hidden {
+    display: none;
 }

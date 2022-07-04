@@ -1,12 +1,15 @@
 // Declaration des choix des signes des 2 entités
 
 let playerSign = ''
-let iaSign= ''
+let iaSign = ''
 
 
+// Score des 2 entités
+
+let scorePlayerDisplay = 0
+let scoreIaDisplay = 0
 
 // Choix du signe de l'ia
-
 
 
 let iaSignChoose = () => {
@@ -24,13 +27,13 @@ let iaSignChoose = () => {
     else {
         numeroToSign = 'scissor'
     }
-    
+
     return numeroToSign
 }
 
 
 iaSign = iaSignChoose()
-console.log (iaSign)
+console.log(iaSign)
 
 
 
@@ -41,103 +44,161 @@ console.log (iaSign)
 
 
 let buttons = document.getElementsByClassName("buttons-sign-regroup")
+
 let playerScore = document.getElementById("player-score")
 let iaScore = document.getElementById("ia-score")
+
 let result = document.getElementsByClassName("result")
 let resultText = document.getElementById("text-result")
+
 let replay = document.getElementsByClassName("button-section")
 
-const playerSignRockClicked = () => {
+let gameOverSentenceSection = getElementsByClassName("game-over")
+let gameOverSentence = getElementById("game-over-sentence")
+let gameOver = document.getElementsByClassName("game-over-section")
+let gameOverButton = document.getElementById("button-game-over")
 
-    if (shifumi('rock',iaSign) === 'player') {
-    
-    playerScore.innerHTML = `1`
-    buttons[0].classList.add("hidden")
-    result[0].classList.remove("hidden")
-    result[0].classList.remove("hidden")
-    replay[0].classList.remove("hidden")
-    resultText.innerHTML = `Vous avez gagné !`
+
+
+
+
+let playerSignRockClicked = () => {
+
+    if (shifumi('rock', iaSign) === 'player') {
+
+        scorePlayerDisplay +=1
+        playerScore.innerHTML = `${scorePlayerDisplay}`
+        buttons[0].classList.add("hidden")
+        result[0].classList.remove("hidden")
+        result[0].classList.remove("hidden")
+        replay[0].classList.remove("hidden")
+        resultText.innerHTML = `Vous avez gagné !`
+        iaSign= iaSignChoose()
     }
 
-    else if (shifumi('rock',iaSign) === 'ia') {
-    
-    iaScore.innerHTML = `1`
-    buttons[0].classList.add("hidden")
-    result[0].classList.remove("hidden")
-    replay[0].classList.remove("hidden")
-    resultText.innerHTML = `l'IA a gagné`
+    else if (shifumi('rock', iaSign) === 'ia') {
+
+        scoreIaDisplay +=1
+        iaScore.innerHTML = `${scoreIaDisplay}`
+        buttons[0].classList.add("hidden")
+        result[0].classList.remove("hidden")
+        replay[0].classList.remove("hidden")
+        resultText.innerHTML = `l'IA a gagné`
+        iaSign= iaSignChoose()
     }
 
     else {
-    
-    buttons[0].classList.add("hidden")
-    result[0].classList.remove("hidden")
-    replay[0].classList.remove("hidden")
-    resultText.innerHTML = `Égalité`
+
+        buttons[0].classList.add("hidden")
+        result[0].classList.remove("hidden")
+        replay[0].classList.remove("hidden")
+        resultText.innerHTML = `Égalité`
+        iaSign= iaSignChoose()
     }
 
 }
 
-const playerSignPaperClicked = () => {
-    if (shifumi('paper',iaSign) === 'player') {
-    
-        playerScore.innerHTML = `1`
+let playerSignPaperClicked = () => {
+
+    if (shifumi('paper', iaSign) === 'player') {
+
+        scorePlayerDisplay +=1
+        playerScore.innerHTML = `${scorePlayerDisplay}`
         buttons[0].classList.add("hidden")
         result[0].classList.remove("hidden")
         replay[0].classList.remove("hidden")
         resultText.innerHTML = `Vous avez gagné !`
-        }
-    
-        else if (shifumi('paper',iaSign) === 'ia') {
-        
-        iaScore.innerHTML = `1`
+        iaSign= iaSignChoose()
+    }
+
+    else if (shifumi('paper', iaSign) === 'ia') {
+
+        scoreIaDisplay +=1
+        iaScore.innerHTML = `${scoreIaDisplay}`
         buttons[0].classList.add("hidden")
         result[0].classList.remove("hidden")
         replay[0].classList.remove("hidden")
         resultText.innerHTML = `l'IA a gagné`
-        }
-    
-        else {
-        
+        iaSign= iaSignChoose()
+    }
+
+    else {
+
         buttons[0].classList.add("hidden")
         result[0].classList.remove("hidden")
         replay[0].classList.remove("hidden")
         resultText.innerHTML = `Égalité`
-        }
+        iaSign= iaSignChoose()
+    }
 }
-const playerSignScissorClicked = () => {
-    if (shifumi('scissor',iaSign) === 'player') {
-    
-        playerScore.innerHTML = `1`
+
+let playerSignScissorClicked = () => {
+
+    if (shifumi('scissor', iaSign) === 'player') {
+
+        scorePlayerDisplay +=1
+        playerScore.innerHTML = `${scorePlayerDisplay}`
         buttons[0].classList.add("hidden")
         result[0].classList.remove("hidden")
         replay[0].classList.remove("hidden")
         resultText.innerHTML = `Vous avez gagné !`
-        }
-    
-        else if (shifumi('scissor',iaSign) === 'ia') {
-        
-        iaScore.innerHTML = `1`
+        iaSign= iaSignChoose()
+    }
+
+    else if (shifumi('scissor', iaSign) === 'ia') {
+
+        scoreIaDisplay +=1
+        iaScore.innerHTML = `${scoreIaDisplay}`
         buttons[0].classList.add("hidden")
         result[0].classList.remove("hidden")
         replay[0].classList.remove("hidden")
         resultText.innerHTML = `l'IA a gagné`
-        }
-    
-        else {
-        
+        iaSign= iaSignChoose()
+    }
+
+    else {
+
         buttons[0].classList.add("hidden")
         result[0].classList.remove("hidden")
         replay[0].classList.remove("hidden")
         resultText.innerHTML = `Égalité`
-        }
+        iaSign= iaSignChoose()
+    }
+   
 }
 
 
 
 
+let retryClicked = () => {
 
+    if (scoreIaDisplay === 3 || scorePlayerDisplay === 3) {
+        gameOver[0].classList.remove("hidden")
+        replay[0].classList.add("hidden")
+        gameOverSentenceSection[0].classList.remove("hidden")
+    
 
+        gameOverClicked = () => {
+        scoreIaDisplay = 0
+        scorePlayerDisplay = 0
+        playerScore.innerHTML = `${scorePlayerDisplay}`
+        iaScore.innerHTML = `${scoreIaDisplay}`
+        gameOver[0].classList.add("hidden")
+        replay[0].classList.add("hidden")
+        result[0].classList.add("hidden")
+        buttons[0].classList.remove("hidden")
+        iaSign= iaSignChoose()
+        }
+
+    }
+    
+    else {
+    buttons[0].classList.remove("hidden")
+    replay[0].classList.add("hidden")
+    result[0].classList.add("hidden")
+    console.log(iaSign)
+    }
+}
 
 
 
@@ -147,7 +208,7 @@ const playerSignScissorClicked = () => {
 let resultShifumi = ''
 
 let shifumi = (playerSign, iaSign) => {
-    
+
 
     if (playerSign === 'rock' && iaSign === 'rock') {
         resultShifumi = 'draw'
@@ -191,10 +252,4 @@ let shifumi = (playerSign, iaSign) => {
 
 
     return resultShifumi
-}
-
-const retryClicked = () => {
-    buttons[0].classList.remove("hidden")
-    replay[0].classList.add("hidden")
-    result[0].classList.add("hidden")
 }
