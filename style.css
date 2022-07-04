@@ -1,0 +1,94 @@
+/* font-family: 'Hind Madurai', sans-serif;
+font-family: 'Jost', sans-serif;
+font-family: 'League Spartan', sans-serif; */
+
+body {
+    background-color: #101913;
+}
+
+h1 {
+    color: #EDF7B5;
+    font-family: 'Hind Madurai', sans-serif;
+    font-size: 100px;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px 20vh 0px;
+}
+
+.horizontal-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0% 5%;
+}
+
+.players {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.iaPlayer {
+    flex-direction: row-reverse;
+}
+
+#player-score {
+    color: #ffffff;
+    font-family: 'Jost', sans-serif;
+    font-size: 40px
+}
+
+#ia-score {
+    color: #ffffff;
+    font-family: 'Jost', sans-serif;
+    font-size: 40px
+}
+
+.buttons-sign-regroup {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    width: 50%;
+}
+
+.button-of-signs {
+    background: #344b07;
+    border-radius: 1000px;
+    padding: 20px 51px;
+    color: #ffffff;
+    display: inline-block;
+    text-align: center;
+}
+
+.sign-image {
+    width: 50px;
+}
+.button-section {
+    display: flex;
+    justify-content: center;
+}
+
+#button-retry {
+    background: #344b07;
+    border-radius: 1000px;
+    padding: 20px 51px;
+    color: #ffffff;
+    display: inline-block;
+    text-align: center;
+}
+
+.retry-image {
+    width: 40px;
+}
+
+
+.hidden {
+    display: none;
+}
+
+#text-result {
+    color : #ffffff;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 40px;
+}
