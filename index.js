@@ -305,13 +305,13 @@ let playerSignScissorClicked = () => {
 
 let playerSignDisplayAddFunction = () => {
     if (playerSign === 'rock') {
-        playerSignImage.setAttribute("src", "images/rock-darker.png")
+        playerSignImage.setAttribute("src", "images/rock.png")
     }
     else if (playerSign === 'paper') {
-        playerSignImage.setAttribute("src", "images/paper-darker.png")
+        playerSignImage.setAttribute("src", "images/paper.png")
     }
     else if (playerSign === 'scissor') {
-        playerSignImage.setAttribute("src", "images/scissor-darker.png")
+        playerSignImage.setAttribute("src", "images/scissor.png")
     }
 }
 
@@ -320,13 +320,13 @@ let playerSignDisplayAddFunction = () => {
 
 let playerSignDisplayRemoveFunction = () => {
     if (playerSign === 'rock') {
-        playerSignImage.removeAttribute("src", "images/rock-darker.png")
+        playerSignImage.removeAttribute("src", "images/rock.png")
     }
     else if (playerSign === 'paper') {
-        playerSignImage.removeAttribute("src", "images/paper-darker.png")
+        playerSignImage.removeAttribute("src", "images/paper.png")
     }
     else if (playerSign === 'scissor') {
-        playerSignImage.removeAttribute("src", "images/scissor-darker.png")
+        playerSignImage.removeAttribute("src", "images/scissor.png")
     }
 }
 
@@ -334,25 +334,25 @@ let playerSignDisplayRemoveFunction = () => {
 
 let iaSignDisplayAddFunction = () => {
     if (iaSign === 'rock') {
-        iaSignImage.setAttribute("src", "images/rock-darker.png")
+        iaSignImage.setAttribute("src", "images/rock.png")
     }
     else if (iaSign === 'paper') {
-        iaSignImage.setAttribute("src", "images/paper-darker.png")
+        iaSignImage.setAttribute("src", "images/paper.png")
     }
     else if (iaSign === 'scissor') {
-        iaSignImage.setAttribute("src", "images/scissor-darker.png")
+        iaSignImage.setAttribute("src", "images/scissor.png")
     }
 }
 
 let iaSignDisplayRemoveFunction = () => {
     if (iaSign === 'rock') {
-        iaSignImage.removeAttribute("src", "images/rock-darker.png")
+        iaSignImage.removeAttribute("src", "images/rock.png")
     }
     else if (iaSign ==='paper') {
-        iaSignImage.removeAttribute("src", "images/paper-darker.png")
+        iaSignImage.removeAttribute("src", "images/paper.png")
     }
     else if (iaSign ==='scissor') {
-        iaSignImage.removeAttribute("src", "images/scissor-darker.png")
+        iaSignImage.removeAttribute("src", "images/scissor.png")
     }
 }
 
