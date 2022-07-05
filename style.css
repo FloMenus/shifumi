@@ -2,18 +2,39 @@
 font-family: 'Jost', sans-serif;
 font-family: 'League Spartan', sans-serif; */
 
+
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #331832 #ac1648;
+}
+
+*::-webkit-scrollbar {
+    width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #ac1648;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #331832;
+    border-radius: 11px;
+    border: 4px solid #ffffff;
+}
+
 body {
     background-color: #fdf0d5;
 }
 header {
     display: flex;
     justify-content: space-between;
-    padding: 2%;
-    border-bottom: #331832 solid 2px;
+    padding: 1% 2%;
+    border-bottom: #ac1648 solid 15px;
+    background-color: #d81e5b;
 }
 
 h1 {
-    color:#d81e5b;
+    color:#fdf0d5;
     font-family: 'Hind Madurai', sans-serif;
     font-size: 50px;
     text-align: center;
@@ -51,13 +72,13 @@ h1 {
 }
 
 #player-score {
-    color: #331832;
+    color: #fff;
     font-family: 'Jost', sans-serif;
     font-size: 28px
 }
 
 #ia-score {
-    color: #331832;
+    color: #fff;
     font-family: 'Jost', sans-serif;
     font-size: 28px
 }
@@ -95,6 +116,7 @@ h1 {
     -o-transition: All 250ms ease;
     -ms-transition: All 250ms ease;
     transition: All 250ms ease;
+    cursor: pointer;
 }
 
 .button:active {
@@ -128,7 +150,7 @@ h1 {
 .result {
     display: flex;
     justify-content: center;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
 }
 
 #button-retry {
@@ -181,7 +203,7 @@ h1 {
 
 .historic-section {
     position: absolute;
-    height: 70%;
+    height: 65%;
     width: 80%;
     left: 50%;
     transform: translateX(-50%);
@@ -217,6 +239,9 @@ h1 {
     margin-bottom: 50px;
     background-color:#8d113b;
     padding : 10px;
+}
+.historic-wrapper div h3{
+    font-weight: bold;
 }
 .close {
     width: 30px;
